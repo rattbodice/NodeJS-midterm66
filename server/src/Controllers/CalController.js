@@ -10,7 +10,7 @@ function isPrime(data) {
     }
     if (data <= 1) result = false;
 
-    return result ? "Your number is prime." : "Your number isn't prime.";
+    return result ;
 }
 
 module.exports = {
@@ -18,7 +18,7 @@ module.exports = {
         let input = req.body.input;
         if (typeof input == "number") {
             console.log(`input is ${input}`);
-            let ans = "Your Number++ = " + onePlusCal(input);
+            let ans = onePlusCal(input);
             res.send(JSON.stringify(ans));
         } else {
             res.send("Please input number only!!");
@@ -31,7 +31,7 @@ module.exports = {
             let ans = isPrime(input);
             res.send(JSON.stringify(ans));
         }else{
-            res.send("Please input number only!!");
+            res.send("Check prime number API,Please input number only!!");
         }
     }
 }
